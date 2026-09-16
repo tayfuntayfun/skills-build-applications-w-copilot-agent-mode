@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors';
 
 type ResourceName = 'users' | 'teams' | 'activities' | 'leaderboard' | 'workouts';
 
@@ -18,6 +19,7 @@ const resources: Record<ResourceName, unknown[]> = {
 };
 
 app.use(express.json());
+app.use(cors());
 
 app.get('/api/health', (_request, response) => {
   response.json({ status: 'ok', apiBaseUrl });
