@@ -1,4 +1,21 @@
-# React + TypeScript + Vite
+# Octofit Tracker frontend
+
+The presentation tier runs on Vite port `5173` and reads the API host from
+`VITE_CODESPACE_NAME`.
+
+For a GitHub Codespace, create `octofit-tracker/frontend/.env.local` with:
+
+```env
+VITE_CODESPACE_NAME=your-codespace-name
+```
+
+`VITE_CODESPACE_NAME` must be defined for Codespaces so requests use
+`https://your-codespace-name-8000.app.github.dev/api/[component]/`. When it is
+unset, the app safely falls back to `http://localhost:8000` for local work.
+
+Start the frontend with `npm run dev --prefix octofit-tracker/frontend`.
+
+## Vite template notes
 
 This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
 
