@@ -4,6 +4,7 @@ type ResourceName = 'users' | 'teams' | 'activities' | 'leaderboard' | 'workouts
 
 const app = express();
 const port = Number(process.env.PORT) || 8000;
+const host = '0.0.0.0';
 const codespaceName = process.env.CODESPACE_NAME;
 const apiBaseUrl = codespaceName
   ? `https://${codespaceName}-8000.app.github.dev`
@@ -39,6 +40,6 @@ function registerResourceRoutes(resourceName: ResourceName) {
   registerResourceRoutes,
 );
 
-app.listen(port, () => {
+app.listen(port, host, () => {
   console.log(`OctoFit API listening at ${apiBaseUrl}`);
 });
