@@ -11,7 +11,8 @@ VITE_CODESPACE_NAME=your-codespace-name
 
 `VITE_CODESPACE_NAME` must be defined for Codespaces so requests use
 `https://your-codespace-name-8000.app.github.dev/api/[component]/`. When it is
-unset, the app safely falls back to `http://localhost:8000` for local work.
+unset, a forwarded Codespaces frontend can derive the name from its `-5173`
+hostname; local work safely falls back to `http://localhost:8000`.
 
 Start the frontend with `npm run dev --prefix octofit-tracker/frontend`.
 
